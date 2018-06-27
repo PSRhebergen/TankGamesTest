@@ -42,16 +42,12 @@ public class FireBullet : MonoBehaviour {
         if (bulletType == 0)
         {
             var bulletClone = (GameObject)Instantiate(bullet, fireTransform.position, fireTransform.rotation);
-            bulletClone.GetComponent<Rigidbody2D>().AddForce(bulletClone.transform.up * speed);
+            bulletClone.GetComponent<BulletControl>().shooter = gameObject.transform.parent.gameObject;
         }
         else if(bulletType == 1)
         {
             var bulletClone = (GameObject)Instantiate(smokeBullet, fireTransform.position, fireTransform.rotation);
-            bulletClone.GetComponent<Rigidbody2D>().AddForce(bulletClone.transform.up * speed);
+            bulletClone.GetComponent<BulletControl>().shooter = gameObject.transform.parent.gameObject;
         }
-
-       
-
-        
     }
 }
