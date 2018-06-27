@@ -6,40 +6,35 @@ public class StationaryTurretControl : MonoBehaviour
     public float turnSpeed;
     public GameObject bullet;
 
-    public float speed;
+    public float bulletSpeed;
     public Transform fireTransform;
 
-    private Vector3 player;
+    private float nextTimeToFire = 0f;
 
-    private float nextTimeToFire;
-
-    private void Start()
+    void Update()
     {
-        player = GameObject.FindWithTag("Player").transform.position;
+        
+        //this.transform.Rotate(Vector3.back * turnSpeed);
+        
     }
 
-    private void Update()
+    void OnTriggerEnter2D(Collider2D col)
     {
-        transform.LookAt(new Vector3(player.x, player.y, 0));
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
+        Debug.Log("Collision");
+        if (col.gameObject.CompareTag("Player"))
         {
-            //RaycastHit2D hit = Physics2D.Raycast(fireTransform.position, Vector2.up);
-            //if (hit.collider != null)
-            //{
+            Vector3 dir = col.gameObject.transform.position - this.transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+
             if (Time.time >= nextTimeToFire)
             {
                 var bulletClone = (GameObject)Instantiate(bullet, fireTransform.position, fireTransform.rotation);
-                bulletClone.GetComponent<Rigidbody2D>().AddForce(bulletClone.transform.up * speed);
+                bulletClone.GetComponent<Rigidbody2D>().AddForce(bulletClone.transform.up * bulletSpeed);
 
-                nextTimeToFire = Time.time + 1;
+                nextTimeToFire = Time.time + 2;
+                
             }
-            //}
-            //else
-            //    this.transform.Rotate(Vector3.back * turnSpeed);
         }
         
     }

@@ -8,7 +8,6 @@ public class MoveTank : MonoBehaviour
     public float brakeSpeed;
     public float turnSpeed;
 
-
     private Vector2 currentSpeed;
     private Rigidbody2D rb2d;
 
