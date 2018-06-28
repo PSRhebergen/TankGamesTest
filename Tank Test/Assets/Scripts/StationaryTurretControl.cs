@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class StationaryTurretControl : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class StationaryTurretControl : MonoBehaviour
     public float fireRate;
     public Transform fireTransform;
 
-    public float shootingAngleError = .5f;
+    public float shootingAngleTolerance = 5f;
 
     private float nextTimeToFire = 0f;
     private bool firing = false;
@@ -21,13 +22,12 @@ public class StationaryTurretControl : MonoBehaviour
         }
         else
         {
-            Vector3 dir = GameObject.FindGameObjectWithTag("Player").transform.position - transform.position;
-            Quaternion lookRotation = Quaternion.LookRotation(dir);
-            Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * 2).eulerAngles;
-            transform.rotation = Quaternion.Euler(0f, 0f, rotation.z);
-            if (Time.time >= nextTimeToFire && 
-                Quaternion.Angle(transform.rotation, lookRotation) <= 90f + shootingAngleError && 
-                Quaternion.Angle(transform.rotation, lookRotation) >= 90f - shootingAngleError)
+            Vector3 vectorToTarget = GameObject.FindGameObjectWithTag("Player").transform.position - transform.position;
+            float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
+            Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = Quaternion.Lerp(transform.rotation, q, Time.deltaTime * 3f);
+
+            if (Time.time >= nextTimeToFire && Quaternion.Angle(transform.rotation, q) <= Math.Abs(shootingAngleTolerance))
             { 
                 var bulletClone = (GameObject)Instantiate(bullet, fireTransform.position, fireTransform.rotation);
                 bulletClone.GetComponent<BulletControl>().shooter = gameObject.transform.parent.gameObject;

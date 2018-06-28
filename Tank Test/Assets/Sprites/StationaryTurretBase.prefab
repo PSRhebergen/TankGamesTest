@@ -158,7 +158,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 6
+  m_Radius: 5
 --- !u!61 &61325902221708882
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -195,11 +195,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0210811f6cefc0f49ada42fb9fd831f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 1
+  turnSpeed: 0.5
   bullet: {fileID: 1974033384345158, guid: b3a9c1787ac78394cb6be08fa12c28ee, type: 2}
-  bulletSpeed: 200
-  fireRate: 1
+  fireRate: 2
   fireTransform: {fileID: 4226627792291508}
+  shootingAngleError: 0.5
 --- !u!212 &212643822553658720
 SpriteRenderer:
   m_ObjectHideFlags: 1
