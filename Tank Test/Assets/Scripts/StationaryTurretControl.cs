@@ -36,11 +36,20 @@ public class StationaryTurretControl : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            firing = true;
+            Debug.DrawRay(fireTransform.position, GameObject.FindGameObjectWithTag("Player").transform.position - fireTransform.position, Color.red);
+            RaycastHit2D[] hit = Physics2D.RaycastAll(fireTransform.position, GameObject.FindGameObjectWithTag("Player").transform.position - fireTransform.position,  (1 << LayerMask.NameToLayer("Player")));
+            if (hit[1].collider.gameObject.CompareTag("Player"))
+            {
+                firing = true;
+            }
+            else
+            {
+                firing = false;
+            }
         }        
     }
 

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114090967137740704}
   - component: {fileID: 50498569687745152}
   - component: {fileID: 58688662264639280}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: StationaryTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 212901729838803536}
   - component: {fileID: 50051946621343164}
   - component: {fileID: 61325902221708882}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: StationaryTurretBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4226627792291508}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FireLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,13 +69,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1428434031755128}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.44000006, y: 0.01, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.415, y: 0.01, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4900098039219368}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!4 &4435999872078622
 Transform:
   m_ObjectHideFlags: 1
@@ -199,7 +199,7 @@ MonoBehaviour:
   bullet: {fileID: 1974033384345158, guid: b3a9c1787ac78394cb6be08fa12c28ee, type: 2}
   fireRate: 2
   fireTransform: {fileID: 4226627792291508}
-  shootingAngleError: 0.5
+  shootingAngleTolerance: 5
 --- !u!212 &212643822553658720
 SpriteRenderer:
   m_ObjectHideFlags: 1
