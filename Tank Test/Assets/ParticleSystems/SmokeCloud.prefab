@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198919708107895164}
   - component: {fileID: 199715184754249494}
   - component: {fileID: 114227446673833094}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SmokeCloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2250,11 +2250,11 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
     type: 0
     collisionMode: 0
-    plane0: {fileID: 0}
+    plane0: {fileID: 4929967840474188, guid: 29e3f3ae4da9f1046b47f4b4e7f7b65f, type: 2}
     plane1: {fileID: 0}
     plane2: {fileID: 0}
     plane3: {fileID: 0}

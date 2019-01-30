@@ -108,6 +108,48 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &38536123
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4929967840474188, guid: 29e3f3ae4da9f1046b47f4b4e7f7b65f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4929967840474188, guid: 29e3f3ae4da9f1046b47f4b4e7f7b65f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4929967840474188, guid: 29e3f3ae4da9f1046b47f4b4e7f7b65f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4929967840474188, guid: 29e3f3ae4da9f1046b47f4b4e7f7b65f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4929967840474188, guid: 29e3f3ae4da9f1046b47f4b4e7f7b65f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4929967840474188, guid: 29e3f3ae4da9f1046b47f4b4e7f7b65f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4929967840474188, guid: 29e3f3ae4da9f1046b47f4b4e7f7b65f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4929967840474188, guid: 29e3f3ae4da9f1046b47f4b4e7f7b65f, type: 2}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 29e3f3ae4da9f1046b47f4b4e7f7b65f, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &137985563
 Prefab:
   m_ObjectHideFlags: 0
@@ -816,7 +858,7 @@ MonoBehaviour:
   range: 4
   shootingAngleTolerance: 5
   aimSpeed: 3
-  bullet: {fileID: 1974033384345158, guid: f71c279390f10eb4bb7060271e5f9db3, type: 2}
+  bullet: {fileID: 1974033384345158, guid: b3a9c1787ac78394cb6be08fa12c28ee, type: 2}
   fireTransform: {fileID: 1087631386}
   sound: {fileID: 8300000, guid: 6b9e2b998d00b1c4991c7f9605dcb5db, type: 3}
   particle: {fileID: 198256918851171118, guid: 56f3dbada5d18a24ab12bd251afe7a06, type: 2}
