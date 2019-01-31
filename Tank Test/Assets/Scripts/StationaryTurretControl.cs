@@ -28,7 +28,6 @@ public class StationaryTurretControl : MonoBehaviour
         else
         {
             this.transform.Rotate(Vector3.back * turnSpeed);
-            //Debug.Log(this.gameObject.name + " turning");
         }
     }
 
@@ -63,7 +62,11 @@ public class StationaryTurretControl : MonoBehaviour
             particle.Play();
             var bulletClone = (GameObject)Instantiate(bullet, fireTransform.position, fireTransform.rotation);
             bulletClone.GetComponent<BulletControl>().shooter = gameObject.transform.parent.gameObject;
-            nextTimeToFire = Time.time + fireRate;
-        }
+            Reload();
+        }        
+    }
+    private void Reload()
+    {
+        nextTimeToFire = Time.time + fireRate;
     }
 }

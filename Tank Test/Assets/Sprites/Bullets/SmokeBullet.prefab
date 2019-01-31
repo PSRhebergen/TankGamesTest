@@ -102,6 +102,7 @@ MonoBehaviour:
   speed: 200
   particle: {fileID: 198919708107895164, guid: 2d9b077d0ca40514190eaf93e0acccb3, type: 2}
   damage: 10
+  rangeTime: 1
   shooter: {fileID: 0}
 --- !u!212 &212623846848219268
 SpriteRenderer:
