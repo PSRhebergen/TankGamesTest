@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 82822647446138386}
   m_Layer: 10
   m_Name: StationaryTurret
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,9 +41,10 @@ GameObject:
   - component: {fileID: 212901729838803536}
   - component: {fileID: 50051946621343164}
   - component: {fileID: 61325902221708882}
+  - component: {fileID: 114930437910820078}
   m_Layer: 10
   m_Name: StationaryTurretBase
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -270,6 +271,19 @@ MonoBehaviour:
   sound: {fileID: 8300000, guid: 6b9e2b998d00b1c4991c7f9605dcb5db, type: 3}
   particle: {fileID: 198256918851171118, guid: 56f3dbada5d18a24ab12bd251afe7a06, type: 2}
   addRotation: 0
+--- !u!114 &114930437910820078
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1133486508216398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8978792055e9c874197faf0f4dd99260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 50
+  currentHealth: 0
 --- !u!212 &212643822553658720
 SpriteRenderer:
   m_ObjectHideFlags: 1

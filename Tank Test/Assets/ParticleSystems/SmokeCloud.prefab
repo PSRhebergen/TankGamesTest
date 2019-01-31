@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198919708107895164}
   - component: {fileID: 199715184754249494}
   - component: {fileID: 114227446673833094}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: SmokeCloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}

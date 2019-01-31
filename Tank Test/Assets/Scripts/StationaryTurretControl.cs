@@ -28,7 +28,7 @@ public class StationaryTurretControl : MonoBehaviour
         else
         {
             this.transform.Rotate(Vector3.back * turnSpeed);
-            Debug.Log(this.gameObject.name + " turning");
+            //Debug.Log(this.gameObject.name + " turning");
         }
     }
 
@@ -36,7 +36,7 @@ public class StationaryTurretControl : MonoBehaviour
     {
         Debug.DrawRay(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position - transform.position, Color.red);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position - transform.position, range, ~(1 << LayerMask.NameToLayer("Enemy")));
-        if (hit.collider != null && hit.collider.gameObject.CompareTag("Player"))
+        if (hit.collider != null && hit.collider.gameObject.CompareTag("Player")) //If we see the player we should be shooting
         {
             firing = true;
         }

@@ -4,6 +4,7 @@ public class BulletControl : MonoBehaviour {
 
     public float speed;
     public ParticleSystem particle;
+    public int damage;
 
     [HideInInspector]
     public GameObject shooter;
@@ -19,6 +20,12 @@ public class BulletControl : MonoBehaviour {
         {
             Destroy(this.gameObject);
             Instantiate(particle, transform.position, transform.rotation);
+
+            //The not as stupid way to check this
+            if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Player")
+            {
+               collision.gameObject.GetComponent<HealthControl>().subtractHealth(damage);
+            }
         }    
     }
 }
