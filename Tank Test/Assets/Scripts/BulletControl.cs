@@ -2,25 +2,31 @@
 
 public class BulletControl : MonoBehaviour {
 
-    public float speed;
-    public ParticleSystem particle;
-    public int damage;
+    public float speed; //How fast the bullet should be traveling
+    public int damage; //How many hit points to deduct
     public float rangeTime; //Time until bullet is destroyed
-
+    public ParticleSystem explosion; //The explosion VFX to be played upon impact
+    public AudioClip impactSound; //The SFX to be played upon impact
+    
     [HideInInspector]
     public GameObject shooter;
 
     private float startTime;
+    private AudioSource audioSource;
+    private bool isDestroyed;
 
     private void Start()
     {
         GetComponent<Rigidbody2D>().AddForce(transform.up * speed);
         startTime = Time.time;
+        audioSource = GetComponent<AudioSource>();
+        isDestroyed = false;
     }
 
     private void FixedUpdate()
     {
-        if(Time.time >= startTime + rangeTime)
+        //Check if the bullet has travelled full range and is not in the Destroyed state
+        if(Time.time >= startTime + rangeTime && !isDestroyed)
         {
             BulletHit();
         }
@@ -42,7 +48,17 @@ public class BulletControl : MonoBehaviour {
 
     private void BulletHit()
     {
-        Destroy(this.gameObject);
-        Instantiate(particle, transform.position, transform.rotation);
+        //Start up the impact FX
+        audioSource.clip = impactSound;
+        audioSource.Play();
+        Instantiate(explosion, transform.position, transform.rotation);
+
+        //Disable everything but the audio
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
+        isDestroyed = true;
+
+        //Then destroy self after the explosion finishes
+        Destroy(this.gameObject, audioSource.clip.length);
     }
 }

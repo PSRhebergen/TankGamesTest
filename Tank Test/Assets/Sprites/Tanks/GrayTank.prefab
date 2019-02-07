@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4911813358268012}
   - component: {fileID: 212673578229429972}
-  - component: {fileID: 114331567186449976}
   - component: {fileID: 50522634710947624}
   - component: {fileID: 61549276378073686}
   - component: {fileID: 114034465513279756}
@@ -276,29 +275,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0bdf2bb14b623744a2f74c81d00e227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1974033384345158, guid: b3a9c1787ac78394cb6be08fa12c28ee, type: 2}
-  smokeBullet: {fileID: 1974033384345158, guid: f71c279390f10eb4bb7060271e5f9db3,
-    type: 2}
+  bulletTypes: []
   speed: 200
   fireRate: 1
   sound: {fileID: 8300000, guid: 6b9e2b998d00b1c4991c7f9605dcb5db, type: 3}
   fireTransform: {fileID: 4294541773716202}
   particle: {fileID: 198256918851171118, guid: 56f3dbada5d18a24ab12bd251afe7a06, type: 2}
---- !u!114 &114331567186449976
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1055228248295134}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1242bbb758b4a7e4dada685b371ee794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  acceleration: 3
-  maxSpeed: 10
-  brakeSpeed: 3
-  turnSpeed: 1
 --- !u!114 &114796273653124300
 MonoBehaviour:
   m_ObjectHideFlags: 1
